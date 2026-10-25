@@ -1,0 +1,290 @@
+[
+{
+"naam": "Almere Poort",
+"lat": 52.34295,
+"lon": 5.15225,
+"cap": 400,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:17776"
+},
+{
+"naam": "Almere Muziekwijk",
+"lat": 52.36771,
+"lon": 5.19069,
+"cap": 250,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18025"
+},
+{
+"naam": "Almere Parkwijk",
+"lat": 52.37674,
+"lon": 5.24464,
+"cap": 150,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18034"
+},
+{
+"naam": "Almere Buiten",
+"lat": 52.39415,
+"lon": 5.27794,
+"cap": 300,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:18030"
+},
+{
+"naam": "Almere Oostvaarders",
+"lat": 52.40315,
+"lon": 5.30027,
+"cap": 300,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:17899"
+},
+{
+"naam": "Lelystad Centrum",
+"lat": 52.50802,
+"lon": 5.47286,
+"cap": 500,
+"vol": "09:00",
+"id": "nl-OpenOV_stoparea:18006"
+},
+{
+"naam": "Weesp",
+"lat": 52.31246,
+"lon": 5.04356,
+"cap": 80,
+"vol": "07:30",
+"id": "nl-OpenOV_stoparea:18093"
+},
+{
+"naam": "Bussum Zuid",
+"lat": 52.2655,
+"lon": 5.163,
+"cap": 60,
+"vol": "07:30",
+"id": "nl-OpenOV_stoparea:17972"
+},
+{
+"naam": "Hilversum Sportpark",
+"lat": 52.21656,
+"lon": 5.18734,
+"cap": 100,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18193"
+},
+{
+"naam": "Hilversum Media Park",
+"lat": 52.238,
+"lon": 5.17391,
+"cap": 120,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:30400"
+},
+{
+"naam": "Baarn",
+"lat": 52.20836,
+"lon": 5.28172,
+"cap": 80,
+"vol": "07:45",
+"id": "nl-OpenOV_stoparea:17948"
+},
+{
+"naam": "Amersfoort Vathorst",
+"lat": 52.19219,
+"lon": 5.43342,
+"cap": 300,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:17944"
+},
+{
+"naam": "Amersfoort Schothorst",
+"lat": 52.17471,
+"lon": 5.40402,
+"cap": 150,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:17877"
+},
+{
+"naam": "Hoevelaken",
+"lat": 52.16646,
+"lon": 5.45879,
+"cap": 100,
+"vol": "07:45",
+"id": "nl-OpenOV_stoparea:17825"
+},
+{
+"naam": "Barneveld Zuid",
+"lat": 52.12882,
+"lon": 5.60232,
+"cap": 150,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:116635"
+},
+{
+"naam": "Barneveld Noord",
+"lat": 52.16097,
+"lon": 5.59877,
+"cap": 150,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:17923"
+},
+{
+"naam": "Nijkerk",
+"lat": 52.22212,
+"lon": 5.49343,
+"cap": 250,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:18260"
+},
+{
+"naam": "Veenendaal-De Klomp",
+"lat": 52.04594,
+"lon": 5.57397,
+"cap": 250,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:17868"
+},
+{
+"naam": "Maarn",
+"lat": 52.06436,
+"lon": 5.37041,
+"cap": 150,
+"vol": "07:45",
+"id": "nl-OpenOV_stoparea:18140"
+},
+{
+"naam": "Driebergen-Zeist",
+"lat": 52.06516,
+"lon": 5.25961,
+"cap": 200,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18321"
+},
+{
+"naam": "Utrecht Overvecht",
+"lat": 52.11031,
+"lon": 5.12518,
+"cap": 150,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18273"
+},
+{
+"naam": "Houten Castellum",
+"lat": 52.01851,
+"lon": 5.17889,
+"cap": 500,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:17835"
+},
+{
+"naam": "Geldermalsen",
+"lat": 51.88263,
+"lon": 5.27144,
+"cap": 200,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:17860"
+},
+{
+"naam": "Culemborg",
+"lat": 51.94704,
+"lon": 5.22677,
+"cap": 250,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:18293"
+},
+{
+"naam": "Breukelen",
+"lat": 52.1706,
+"lon": 4.99062,
+"cap": 150,
+"vol": "07:45",
+"id": "nl-OpenOV_stoparea:18230"
+},
+{
+"naam": "Woerden",
+"lat": 52.0851,
+"lon": 4.89259,
+"cap": 250,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18083"
+},
+{
+"naam": "Gouda Goverwelle",
+"lat": 52.01466,
+"lon": 4.74246,
+"cap": 250,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:18171"
+},
+{
+"naam": "Deventer Colmschate",
+"lat": 52.25034,
+"lon": 6.21526,
+"cap": 200,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:17783"
+},
+{
+"naam": "Apeldoorn Osseveld",
+"lat": 52.21586,
+"lon": 6.00642,
+"cap": 150,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:17953"
+},
+{
+"naam": "Apeldoorn De Maten",
+"lat": 52.20515,
+"lon": 6.00064,
+"cap": 150,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:17954"
+},
+{
+"naam": "Harderwijk",
+"lat": 52.33784,
+"lon": 5.62038,
+"cap": 300,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:18116"
+},
+{
+"naam": "Ede-Wageningen",
+"lat": 52.02816,
+"lon": 5.67149,
+"cap": 300,
+"vol": "08:15",
+"id": "nl-OpenOV_stoparea:18127"
+},
+{
+"naam": "Zwolle Stadshagen",
+"lat": 52.5279,
+"lon": 6.051,
+"cap": 200,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:235574"
+},
+{
+"naam": "Heerhugowaard",
+"lat": 52.67053,
+"lon": 4.82387,
+"cap": 300,
+"vol": "08:30",
+"id": "nl-OpenOV_stoparea:18203"
+},
+{
+"naam": "Alkmaar Noord",
+"lat": 52.64381,
+"lon": 4.76386,
+"cap": 150,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18077"
+},
+{
+"naam": "Purmerend Weidevenne",
+"lat": 52.49638,
+"lon": 4.93502,
+"cap": 250,
+"vol": "08:00",
+"id": "nl-OpenOV_stoparea:18014"
+}
+]

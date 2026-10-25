@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f2419">
+<title>Reisplanner P+Trein</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚆%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:dark;--bg:#0f2419;--bg2:#0a1a11;--kaart:#17332a;--kaart2:#1d3d32;--tekst:#efe6cf;--meta:#a9b79f;--rand:#2f4e40;--accent:#d8c48e;--goed:#7fd08a;--matig:#e6b655;--slecht:#e07a6a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,#1c4030 0%,var(--bg) 55%,var(--bg2) 100%) fixed;color:var(--tekst);font:16px/1.4 system-ui,sans-serif}
+main{max-width:780px;margin:0 auto;padding:16px}
+h1{margin:4px 0 2px;font:600 26px Georgia,serif;color:var(--accent);letter-spacing:.03em}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--meta);margin:26px 0 10px;border-bottom:1px solid var(--rand);padding-bottom:6px}
+.sub{color:var(--meta);font-size:14px;margin:0 0 14px}
+.kaart{background:var(--kaart);border:1px solid var(--rand);border-radius:14px;padding:14px;margin-bottom:12px}
+label{display:block;font-size:12px;color:var(--meta);margin:10px 0 4px;text-transform:uppercase;letter-spacing:.08em}
+label:first-child{margin-top:0}
+input,select,button{font:inherit;color:inherit}
+input[type=text],input[type=date],input[type=time],input[type=number],select{width:100%;background:var(--bg2);border:1px solid var(--rand);border-radius:10px;padding:10px 12px;min-height:44px}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.rij{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rij3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.veld{position:relative}
+.sugg{position:absolute;left:0;right:0;top:100%;z-index:10;background:var(--kaart2);border:1px solid var(--accent);border-radius:10px;margin-top:2px;overflow:hidden;box-shadow:0 8px 24px #0008}
+.sugg button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--rand);padding:10px 12px;min-height:44px;cursor:pointer}
+.sugg button:hover,.sugg button:focus{background:var(--rand)}
+.sugg small{color:var(--meta)}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg label{margin:0;flex:1;min-width:110px;text-transform:none;letter-spacing:0;font-size:15px;color:var(--tekst)}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;text-align:center;border:1px solid var(--rand);border-radius:10px;padding:10px 8px;min-height:44px;cursor:pointer;background:var(--bg2)}
+.seg input:checked+span{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+.seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.knop{background:var(--accent);color:var(--bg);border:0;border-radius:12px;padding:13px 18px;min-height:48px;font-weight:700;cursor:pointer;width:100%;margin-top:14px;font-size:17px}
+.knop:disabled{opacity:.6;cursor:wait}
+.klein{background:none;border:1px solid var(--rand);border-radius:8px;padding:6px 10px;min-height:36px;cursor:pointer;color:var(--meta)}
+.klein:hover{border-color:var(--accent);color:var(--tekst)}
+details>summary{cursor:pointer;color:var(--accent);padding:6px 0;min-height:36px}
+.status{color:var(--meta);font-size:14px;margin:12px 0;min-height:20px}
+.fout{color:var(--slecht)}
+.opt{display:block;width:100%;text-align:left;background:var(--kaart);border:2px solid var(--rand);border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer}
+.opt[aria-pressed=true]{border-color:var(--accent);background:var(--kaart2)}
+.opt .kop{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.opt b{color:var(--accent);font-size:17px}
+.meta{color:var(--meta);font-size:13px}
+.chip{display:inline-block;font-size:12px;border-radius:6px;padding:2px 7px;margin:2px 4px 0 0;border:1px solid var(--rand);white-space:nowrap}
+.k-goed{color:var(--goed);border-color:var(--goed)}.k-matig{color:var(--matig);border-color:var(--matig)}.k-slecht{color:var(--slecht);border-color:var(--slecht)}
+.groot{font:600 22px Georgia,serif;color:var(--tekst)}
+.hero{border:2px solid var(--accent);border-radius:16px;padding:14px;margin-bottom:12px;background:var(--kaart2)}
+.hero .titel{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:6px}
+.hero.snel{border-color:var(--goed)}.hero.snel .titel{color:var(--goed)}
+.benen{list-style:none;margin:8px 0 0;padding:0}
+.benen li{display:grid;grid-template-columns:22px 1fr;gap:6px;padding:5px 0;border-top:1px solid var(--rand);font-size:14px}
+.benen .t{color:var(--meta);white-space:nowrap}
+.lijst button{display:flex;justify-content:space-between;gap:8px;width:100%;background:none;border:0;border-bottom:1px solid var(--rand);padding:9px 2px;min-height:44px;cursor:pointer;text-align:left}
+.lijst button:hover{background:var(--kaart)}
+.waarsch{border:1px solid var(--matig);color:var(--matig);border-radius:10px;padding:8px 10px;font-size:14px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:4px 6px;border-bottom:1px solid var(--rand);text-align:left}
+td input[type=number],td input[type=time]{padding:6px;min-height:36px;width:84px}
+footer{margin:30px 0 10px;font-size:12px;color:var(--meta);text-align:center}
+a{color:var(--accent)}
+@media(max-width:520px){.rij,.rij3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>🚆 Reisplanner P+Trein</h1>
+<p class="sub">Met de auto naar een station met gratis parkeren, daarna met de trein. Met de laatste en laatste snelle terugreis direct erbij.</p>
+
+<form id="form" class="kaart" autocomplete="off">
+  <label for="thuis">Vertrek (thuis)</label>
+  <div class="veld"><input type="text" id="thuis" placeholder="Adres of plaats" required><div class="sugg" hidden></div></div>
+  <label for="dest">Bestemming (adres, plek of station)</label>
+  <div class="veld"><input type="text" id="dest" placeholder="Bijv. Rijksmuseum of Utrecht Centraal" required><div class="sugg" hidden></div></div>
+  <div class="rij3">
+    <div><label for="datum">Heen op</label><input type="date" id="datum" required></div>
+    <div><label for="tijd">Vertrek thuis</label><input type="time" id="tijd" value="08:30" required></div>
+    <div><label for="terugdatum">Terug op</label><input type="date" id="terugdatum" required></div>
+  </div>
+  <label>Fiets</label>
+  <div class="seg" role="radiogroup" aria-label="Fiets">
+    <label><input type="radio" name="fiets" value="geen" checked><span>Geen fiets</span></label>
+    <label><input type="radio" name="fiets" value="vouw"><span>🚲 Vouwfiets mee</span></label>
+    <label><input type="radio" name="fiets" value="ov"><span>🚲 OV-fiets</span></label>
+  </div>
+  <details style="margin-top:10px"><summary>Instellingen en parkeerstations</summary>
+    <div class="rij3">
+      <div><label for="i-wacht">Max. wachttijd (min)</label><input type="number" id="i-wacht" min="5" max="240" step="5"></div>
+      <div><label for="i-rij">Max. rijtijd naar station (min)</label><input type="number" id="i-rij" min="5" max="120" step="5"></div>
+      <div><label for="i-buf">Parkeren + naar perron (min)</label><input type="number" id="i-buf" min="0" max="30"></div>
+    </div>
+    <label for="i-kans">Verberg stations met minder dan … % parkeerkans</label>
+    <input type="number" id="i-kans" min="0" max="95" step="5">
+    <label for="vroegst">Eerst terug vertrekken na (leeg = 1 uur na aankomst)</label>
+    <input type="time" id="vroegst">
+    <p class="meta">Parkeerstations (vink aan welke meedoen; capaciteit en "vol rond" zijn schattingen, pas ze aan naar eigen ervaring):</p>
+    <div style="overflow-x:auto"><table id="stationtabel"></table></div>
+    <label for="nieuwstation">Station toevoegen</label>
+    <div class="veld"><input type="text" id="nieuwstation" placeholder="Zoek station…"><div class="sugg" hidden></div></div>
+    <p><button type="button" class="klein" id="resetstations">Standaardlijst herstellen</button></p>
+  </details>
+  <button class="knop" id="plan" type="submit">Plan mijn reis</button>
+</form>
+
+<div class="status" id="status" role="status" aria-live="polite"></div>
+<div id="uit"></div>
+
+<footer>Dienstregeling en realtime via <a href="https://transitous.org">Transitous</a> (open data), rijtijden via OSRM. Parkeerkans is een schatting op basis van aankomsttijd, geen live bezetting.</footer>
+</main>
+<script src="plan.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
